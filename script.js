@@ -12,12 +12,13 @@ function getComputerChoice() {
     let a = Math.random();
 
     if (a <= .33) {
-        alert('Rock');
+        return 'rock';
     } else if (a >= .34 && a <= .66) {
-        alert('Paper');
+        return 'paper';
     } else {
-        alert('Scissors');
+        return 'scissors';
     }
 
-
 }
+
+// create function call getHumanChoice which prompts the user for a string input. Then returns 
