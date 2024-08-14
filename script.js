@@ -12,13 +12,28 @@ function getComputerChoice() {
     let a = Math.random();
 
     if (a <= .33) {
-        return 'rock';
+        return 'Rock';
     } else if (a >= .34 && a <= .66) {
-        return 'paper';
+        return 'Raper';
     } else {
-        return 'scissors';
+        return 'Scissors';
     }
 
 }
 
-// create function call getHumanChoice which prompts the user for a string input. Then returns 
+// create function call getHumanChoice which prompts the user for a string input
+// return a valid choice
+
+function getHumanChoice(a) {
+    a = prompt('Rock, Paper or Scissors?');
+
+    if (a === 'Rock') {
+        return 'Rock';
+    } else if (a === 'Paper') {
+        return 'Paper';
+    } else if (a === 'Scissors') {
+        return 'Scissors';
+    }
+        
+}
+
