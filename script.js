@@ -49,28 +49,41 @@ function getComputerChoice() {
     
     
         if (humanChoice === 'rock' && computerChoice === 'paper') {
-            console.log('You lose! Paper beats Rock');
-            ++computerScore;
+            secondDiv.textContent = 'You lose! Paper beats Rock';
+            fourthDiv.textContent = ++computerScore;
         } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-            console.log('You lose! Scissors beats Paper');
-            ++computerScore;
+            secondDiv.textContent = 'You lose! Scissors beats Paper';
+            fourthDiv.textContent = ++computerScore;
         } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-            console.log('You lose! Rock beats Scissors');
-            ++computerScore;
+            secondDiv.textContent = 'You lose! Rock beats Scissors'
+            fourthDiv.textContent = ++computerScore;
         } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-            console.log('You win! Paper beats Rock');
-            ++humanScore;
+            secondDiv.textContent = 'You win! Paper beats Rock'
+            thirdDiv.textContent = ++humanScore;
         } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-            console.log('You win! Scissors beats Paper');
-            ++humanScore;
+            secondDiv.textContent = 'You win! Scissors beats Paper'
+            thirdDiv.textContent = ++humanScore;
         } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-            console.log('You win! Rock beats Scissors');
-            ++humanScore;
+            secondDiv.textContent = 'You win! Rock beats Scissors'
+            thirdDiv.textContent = ++humanScore;
+        } else {
+            secondDiv.textContent = 'It\'s a tie!';
         }
     
-    
+        if (humanScore === 5) {
+            finishGameDiv.textContent = 'You won the game!';
+            secondDiv.textContent = '';
+        } else if (computerScore === 5){
+            finishGameDiv.textContent = 'You lost the game!';
+            secondDiv.textContent = '';
+
+        }
     
     }
+
+
+
+
 
 
 
@@ -106,6 +119,19 @@ function getComputerChoice() {
     const body = document.querySelector('body');
     body.appendChild(div);
 
+    const secondDiv = document.createElement('div');
+    body.appendChild(secondDiv);
+
+
+
+    const thirdDiv = document.createElement('div');
+    const fourthDiv = document.createElement('div');
+
+    body.appendChild(thirdDiv);
+    body.appendChild(fourthDiv);
+
+    // thirdDiv.textContent = humanScore;
+
 
 
     rockButton.setAttribute('id', 'rock');
@@ -119,19 +145,38 @@ function getComputerChoice() {
 
 
 
-    rockButton.addEventListener('click', () => {
-        playRound('rock', getComputerChoice());
-    });
-    
-    paperButton.addEventListener('click', () => {
-        playRound('paper', getComputerChoice());
-    });
 
-    scissorsButton.addEventListener('click', () => {
-        playRound('scissors', getComputerChoice());
-    });
 
+        rockButton.addEventListener('click', () => {
+            playRound('rock', getComputerChoice());
+        });
+        
+        paperButton.addEventListener('click', () => {
+            playRound('paper', getComputerChoice());
+        });
     
+        scissorsButton.addEventListener('click', () => {
+            playRound('scissors', getComputerChoice());
+        });
+
+
+   
+
+
+
+        const finishGameDiv = document.createElement('div');
+        body.appendChild(finishGameDiv);
+
+
+       
+
+
+        
+        
+
+
+
+
     
 
     
